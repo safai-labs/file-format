@@ -272,50 +272,85 @@ impl From<&[u8]> for FileFormat {
 #[repr(u8)]
 #[non_exhaustive]
 pub enum Kind {
-    #[default]
-    /// Arbitrary binary data that does not fit in any of the other kinds.
-    ArbitraryBinaryData,
-    /// Application specific format possibly useable by application program.
-    Application,
-    /// Stored files and directories into a single file, possibly compressed.
-    Archive,
-    /// Musics, sound effects, and spoken audio recordings.
-    Audio,
-    /// Ebooks.
-    Book,
-    /// Digital certificates.
-    Certificate,
-    /// Compressed single files or streams.
-    Compression,
-    /// Floppy disk images, optical disc images and virtual machine disks.
-    Disk,
-    /// Word processing documents, spreadsheets, presentations, documents templates, diagrams,
-    /// charts, and other formatted documents.
-    Document,
-    /// Machine executable codes, virtual machine codes and shared libraries.
-    Executable,
-    /// Typefaces used for displaying text on screen or in print.
-    Font,
-    /// Collections of geospatial features, GPS tracks and other location-related files.
-    Geospatial,
-    /// Photographs, illustrations, and other types of image files.
-    Image,
-    /// 3D models, CAD drawings, and other types of files used for creating or displaying 3D images.
-    Model,
-    /// Archives or other containers that bundles programs and resources that can be run on target
-    /// environments.
-    Package,
-    /// Lists of audio or video files that are played in a specific order.
-    Playlist,
-    /// Copies of a read-only memory chip of computers, cartridges or other electronic devices.
-    Rom,
-    /// Subtitles and captions.
-    Subtitle,
-    /// Plain text, source codes, markup languages, and other types of files that contain written
-    /// text.
-    Text,
-    /// Movies, animations, and other types of files that contain moving images, possibly with color
-    /// and coordinated sound.
-    Video,
-}
+  #[default]
+  /// Arbitrary binary data that does not fit in any of the other kinds.
+  ArbitraryBinaryData,
+  /// Application specific format possibly usable by application program.
+  Application,
+  /// Stored files and directories into a single file, possibly compressed.
+  Archive,
+  /// Musics, sound effects, and spoken audio recordings.
+  Audio,
+  /// Ebooks.
+  Book,
+  /// Digital certificates.
+  Certificate,
+  /// Compressed single files or streams.
+  Compression,
+  /// Floppy disk images, optical disc images and virtual machine disks.
+  Disk,
+  /// Word processing documents, spreadsheets, presentations, documents templates, diagrams,
+  /// charts, and other formatted documents.
+  Document,
+  /// Machine executable codes, virtual machine codes and shared libraries.
+  Executable,
+  /// Typefaces used for displaying text on screen or in print.
+  Font,
+  /// Collections of geospatial features, GPS tracks and other location-related files.
+  Geospatial,
+  /// Photographs, illustrations, and other types of image files.
+  Image,
+  /// 3D models, CAD drawings, and other types of files used for creating or displaying 3D images.
+  Model,
+  /// Archives or other containers that bundle programs and resources that can be run on target
+  /// environments.
+  Package,
+  /// Lists of audio or video files that are played in a specific order.
+  Playlist,
+  /// Copies of a read-only memory chip of computers, cartridges or other electronic devices.
+  Rom,
+  /// Subtitles and captions.
+  Subtitle,
+  /// Plain text, source codes, markup languages, and other types of files that contain written
+  /// text.
+  Text,
+  /// Movies, animations, and other types of files that contain moving images, possibly with color
+  /// and coordinated sound.
+  Video,
+  /// Source code files and programming scripts.
+  SourceCode,
+  /// Database files or database-related files.
+  Database,
+  /// System or application configuration files.
+  Config,
+  /// Encryption-related files or data.
+  EncryptedData,
+  /// Encryption keys
+  Key,
+  /// Private keys used for encryption.
+  PrivateKey,
+  /// Public keys used for encryption.
+  PublicKey,
 
+  /// Signatures.
+  Signature,
+
+  /// Email messages.
+  Email,
+
+  /// Binary Email Datablob such as MBOX / MS-TNEF etc
+  MailBox,
+
+  /// Data blobs used by a protocol transport
+  /// such as SMTP, POP3, IMAP, NNTP, FTP, HTTP, etc
+  /// Protocol Data (protobuf, json, SOAP, etc)
+  /// or special stuff like sas-xport etc.
+  Data,
+
+  /// Messages sent via a protocol transport
+  Message,
+
+  /// Virtual machine images, snapshots etc.
+  VirtualMachine,
+
+}
