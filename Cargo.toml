@@ -1,6 +1,6 @@
 [package]
 name = "file-format"
-version = "0.17.1"
+version = "0.17.3"
 authors = ["Mickaël Malécot <mickael.malecot@gmail.com>"]
 edition = "2021"
 description = "Crate for determining the file format of a given file or stream."
@@ -17,9 +17,13 @@ resolver = "2"
 
 [dependencies]
 cfb = { version = "0.8", optional = true }
-serde = { version = "1.0", optional = true, features = ["derive"], default-features = false }
+serde = { version = "1.0", optional = true, features = [
+	"derive",
+], default-features = false }
 strum = { workspace = true, features = ["derive"], optional = true }
-zip = { version = "0.6", optional = true, features = ["deflate"], default-features = false }
+zip = { version = "0.6", optional = true, features = [
+	"deflate",
+], default-features = false }
 
 [features]
 
@@ -32,7 +36,17 @@ serde = ["dep:serde"]
 map-media-to-kind = []
 
 ## Reader features
-reader = ["reader-asf", "reader-cfb", "reader-ebml", "reader-exe", "reader-pdf", "reader-rm", "reader-txt", "reader-xml", "reader-zip"]
+reader = [
+	"reader-asf",
+	"reader-cfb",
+	"reader-ebml",
+	"reader-exe",
+	"reader-pdf",
+	"reader-rm",
+	"reader-txt",
+	"reader-xml",
+	"reader-zip",
+]
 reader-asf = []
 reader-cfb = ["dep:cfb"]
 reader-ebml = []
@@ -42,4 +56,3 @@ reader-rm = []
 reader-txt = []
 reader-xml = []
 reader-zip = ["dep:zip"]
-
